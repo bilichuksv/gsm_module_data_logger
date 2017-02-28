@@ -5,7 +5,7 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
     	<link rel="stylesheet" href="css/style.css">
 		<style type="text/css">
-			body {
+			p {
 				background-color: #d2b48c;
 				margin-left: 20%;
 				margin-right: 20%;
@@ -14,13 +14,33 @@
 				font-family: sans-serif;
 			}
 		</style>
+		<script type="text/javascript">
+			function newSrc() {
+				var e = document.getElementById("MySelectMenu");
+				var newSrc = e.options[e.selectedIndex].value;
+				document.getElementById("MyFrame").src=newSrc;
+			}
+    </script>
 	</head>
 	<body>
-		<p>GSM module data logger</p>
+		<p>GSM module data logger</p><br>
+		
+		
+		<div class="col-lg-6 col-md-6">
+			<iframe src="https://www.google.com.ua" style="width:450px;height:450px;overflow:scroll;" id="MyFrame"></iframe>
+		</div>
+		<div class="col-lg-6 col-md-6">
+			<select id="MySelectMenu">
+				 <option value="http://yahoo.com/">Yahoo</option>
+				 <option value="http://www.google.com/custom">Google</option>
+				 <option value="https://yandex.com/">Yandex</option>
+			</select>
+			<button onClick="newSrc();">Change Iframe Src</button>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="js/model.js"></script>
+		<!--<script src="js/model.js"></script>
 		<script src="js/view.js"></script>
-		<script src="js/controller.js"></script>
+		<script src="js/controller.js"></script> -->
 	</body>
 
 </html>
